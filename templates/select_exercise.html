@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="login mt-0">
+        <div class="login-screen">
+            <div class="app-title">
+                <h1 class="headline">Select Exercise</h1>
+            </div>
+
+            <form method="POST" action="" class="login-form">
+              {% csrf_token %}
+              <h5 class="form-labels">
+                {{ form.as_p }}
+            </h5>
+                <input class="btn login_btn pt-2" type="submit" value="Select">
+
+            </form>
+        </div>
+
+    </div>
+    <div class="container-fluid">
+   <h1 class="headline text-center pb-3">All Exercise Items </h1>
+        <table class="table table-bordered text-center">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">Exercise Name</th>
+                    <th scope="col">Calories</th>
+                    <th scope="col">Duration (Minutes)</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for exercise in exercise_items %}
+                <tr>
+                    <td>{{ exercise.name }}</td>
+                    <td>{{ exercise.calorie }}</td>
+                    <td>{{ exercise.duration }}</td>
+                    
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>  
+     </div>
+
+{% endblock content %}

@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Grandstander&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Grandstander&family=Ubuntu:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Open+Sans+Condensed:wght@700&family=Permanent+Marker&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+a {
+  text-decoration:none !important;
+}
+body{
+  font-family: 'Poppins', sans-serif;
+}
+.login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+
+}
+
+.login-screen {
+  width: 400px;
+  max-width: 100%;
+  margin: auto;
+  padding: 2rem;
+  background-color:lightblue;
+  border-radius: 0.5rem;
+}
+.app-title {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.login-form {
+  margin-bottom: 2rem;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.input-group {
+  width: 100%;
+}
+
+.input-group-text {
+  background-color: transparent;
+  border-color: transparent;
+  color: #666;
+}
+
+.form-control {
+  background-color: transparent;
+  border-radius: 0;
+  border-color: #ccc;
+}
+
+.login_btn {
+  display: block;
+  width: 100%;
+  background-color: #2ECC71;
+  color: #fff;
+  border-radius: 0.5rem;
+  padding: 0.75rem;
+  border: none;
+}
+
+.login_btn:hover {
+  background-color: #27AE60;
+}
+
+.login-form {
+  max-width: 30rem;
+  margin: auto;
+}
+.control-group {
+  margin-bottom: 10px;
+  }
+
+
+  .social-icons {
+    margin-top: 1rem;
+  }
+  
+  .social-icons a {
+    display: inline-block;
+    margin-right: 0.5rem;
+    font-size: 1.5rem;
+    color: #333;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .social-icons a:hover {
+    color: #2ECC71;
+    transform: scale(1.2);
+  }
+  .logo {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    height: auto;
+    
+  }
