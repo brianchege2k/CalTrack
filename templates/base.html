@@ -50,7 +50,7 @@
                   <li><a = {% if url_name == 'profile' %} active{% endif %}" href={% url "profile" %}>Your Profile</a></li> 
                 </ul>
               </li>
-              <li><a href=""><span>About</span></a></li>
+              <li><a = {% if url_name == 'foods_search' %} active{% endif %}" href={% url "search_foods" %}><span>Foods Api</span></a></li>
               <li><a href=""><span>Blog</span></a></li>
               <li><a href=""><span>Contact</span></a></li>
               <li><a href="{% url "logout" %}"><span>Logout</span></a></li>
@@ -74,6 +74,7 @@
  <script src="{% static 'js/bootstrap.min.js' %}"></script>
 <script src="{% static 'js/jquery.sticky.js' %}"></script>
 <script src="{% static 'js/main.js' %}"></script>
+<script src="{%static 'js/owl.carousel.min.js'%}"></script>
 
 </body>
 </html>

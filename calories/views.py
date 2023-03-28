@@ -71,10 +71,7 @@ def RegisterPage(request):
 		return render(request,'register.html',context)
 
 #login page
-from django.shortcuts import render, redirect
-from django.contrib.auth import authenticate, login
-from django.contrib import messages
-from django.urls import reverse
+
 #login page
 def LoginPage(request):
 	if request.user.is_authenticated:

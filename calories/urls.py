@@ -2,6 +2,7 @@ from django.urls import path
 
 from .views import HomePageView,LoginPage,LogOutPage,select_food,add_food,select_exercise,add_exercise,RegisterPage,ProfilePage,update_food,delete_food,update_exercise,delete_exercise
 
+
 urlpatterns = [
 	path('', HomePageView,name='home'),
 	path('login/',LoginPage,name='login'),
@@ -16,5 +17,6 @@ urlpatterns = [
 	path('delete_exercise/<str:pk>/',delete_exercise,name='delete_exercise'),
 	path('register/',RegisterPage,name='register'),
 	path('profile/',ProfilePage,name='profile'),
+
   
 ]
