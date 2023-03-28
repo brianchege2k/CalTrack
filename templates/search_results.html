@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1 class="header mt-5">Search Results</h1>
+  <div id="search-results">
+    {% for hit in results %}
+      <div>
+        <h3>{{ hit.fields.item_name }}</h3>
+        <p>Brand: {{ hit.fields.brand_name }}</p>
+        <p>Calories: {{ hit.fields.nf_calories }}</p>
+        <a href="/add_food/?name={{ hit.fields.item_name|urlencode }}&calories={{ hit.fields.nf_calories|urlencode }}">Add to Foods</a>
+      </div>
+    {% endfor %}
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+{% endblock %}
