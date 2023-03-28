@@ -1,8 +1,10 @@
 {% extends 'base.html' %}
-
+{% load static %}
 
 {% block content %}
-
+<div class="col-11 col-xl-1"> 
+    <img src="{% static 'img/Nutritionix-API-Logo.png' %}" alt="Logo" class="logo">
+  </div>
   <h1 class="header mt-5">Search Nutritionix API</h1>
   <form id="food-search-form" action="{% url 'search_results' %}">
     <input type="text" name="q" placeholder="Search for a food">
