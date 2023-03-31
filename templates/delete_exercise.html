@@ -2,11 +2,11 @@
 
 {% block content %}
 
-<p class="text-center headline" style="font-size:32px">Are you sure you want to delete {{ exercise }}</p>
+<p class="text-center headline mt-5" style="font-size:32px">Are you sure you want to delete {{ exercise }}?</p>
 <form method="POST" action="{% url 'delete_exercise' exercise.id %}" class="text-center">
 	{% csrf_token %}
-	<a href="{% url 'profile' %}">Cancel</a>
-	<input type="submit" name="Confirm">
+	<a class="mr-5" href="{% url 'profile' %}">Cancel</a>
+	<input type="submit" class="btn btn-danger" name="Confirm" value="Delete Exercise">
 </form>
 
 {% endblock content %}

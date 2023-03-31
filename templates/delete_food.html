@@ -2,11 +2,11 @@
 
 {% block content %}
 
-<p class="text-center headline" style="font-size:32px">Are you sure you want to delete {{ food }}</p>
+<p class="text-center headline mt-5" style="font-size:32px">Are you sure you want to delete {{ food }}?</p>
 <form method="POST" action="{% url 'delete_food' food.id %}" class="text-center">
 	{% csrf_token %}
-	<a href="{% url 'profile' %}">Cancel</a>
-	<input type="submit" name="Confirm">
+	<a class="mr-3" href="{% url 'profile' %}">Cancel</a>
+	<input type="submit" class="btn btn-danger" name="Confirm" value="Delete Food">
 </form>
 
 {% endblock content %}
