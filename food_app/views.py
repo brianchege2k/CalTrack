@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.http import JsonResponse
 import requests
 from django.shortcuts import render, redirect
+from calories.forms import AddFoodForm
 
 def search_foods(request):
     return render(request, 'food_search.html')
@@ -19,3 +20,5 @@ def search_results(request):
         'results': data['hits'],
     }
     return render(request, 'search_results.html', context)
+
+

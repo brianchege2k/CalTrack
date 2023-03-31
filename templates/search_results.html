@@ -1,6 +1,9 @@
 {% extends 'base.html' %}
+{% load static %}
 
-{% block content %}
+{% block content %}<div class="col-11 col-xl-1"> 
+  <img src="{% static 'img/Nutritionix-API-Logo.png' %}" alt="Logo" class="logo">
+</div>
   <h1 class="header mt-5">Search Results</h1>
   <div id="search-results">
     {% for hit in results %}
@@ -8,7 +11,7 @@
         <h3>{{ hit.fields.item_name }}</h3>
         <p>Brand: {{ hit.fields.brand_name }}</p>
         <p>Calories: {{ hit.fields.nf_calories }}</p>
-        <a href="/add_food/?name={{ hit.fields.item_name|urlencode }}&calories={{ hit.fields.nf_calories|urlencode }}">Add to Foods</a>
+        <a href="{% url 'add_food' %}?item_id={{ hit.fields.item_id }}&item_name={{ hit.fields.item_name|urlencode }}&calories={{ hit.fields.nf_calories|urlencode }}">Add to Foods</a>
       </div>
     {% endfor %}
   </div>

@@ -10,6 +10,7 @@ from datetime import date
 from datetime import datetime
 from .filters import FoodFilter,ExerciseFilter
 from django.utils import timezone
+from django.http import HttpResponse
 
 
 @login_required(login_url='login')
@@ -118,24 +119,37 @@ def select_food(request):
 	return render(request, 'select_food.html',context)
 
 #for adding new food
+
 def add_food(request):
-	#for showing all food items available
-	food_items = Food.objects.filter(person_of=request.user)
-	form = AddFoodForm(request.POST) 
-	if request.method == 'POST':
-		form = AddFoodForm(request.POST)
-		if form.is_valid():
-			profile = form.save(commit=False)
-			profile.person_of = request.user
-			profile.save()
-			return redirect('add_food')
-	else:
-		form = AddFoodForm()
-	#for filtering food
-	myFilter = FoodFilter(request.GET,queryset=food_items)
-	food_items = myFilter.qs
-	context = {'form':form,'food_items':food_items,'myFilter':myFilter}
-	return render(request,'add_food.html',context)
+    # for showing all food items available
+    food_items = Food.objects.filter(person_of=request.user)
+    
+    # retrieve query parameters from the URL
+    item_id = request.GET.get('item_id')
+    item_name = request.GET.get('item_name')
+    calories = request.GET.get('calories')
+    
+    if request.method == 'POST':
+        form = AddFoodForm(request.POST)
+        if form.is_valid():
+            profile = form.save(commit=False)
+            profile.person_of = request.user
+            profile.save()
+            return redirect('add_food')
+    else:
+        # set initial values for the name and calorie fields
+        form = AddFoodForm(initial={'name': item_name, 'calorie': calories})
+    
+    # for filtering food
+    myFilter = FoodFilter(request.GET, queryset=food_items)
+    food_items = myFilter.qs
+    context = {'form': form, 'food_items': food_items, 'myFilter': myFilter}
+    return render(request, 'add_food.html', context)
+
+	
+    
+
+
 
 #for updating food given by the user
 @login_required

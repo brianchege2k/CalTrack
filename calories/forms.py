@@ -24,6 +24,8 @@ class AddFoodForm(forms.ModelForm):
         model = Food
         fields = ('name','quantity','calorie','fat','protein','carbohydrate')
 
+
+
 class SelectExerciseForm(forms.ModelForm):
     class Meta:
         model = Profile

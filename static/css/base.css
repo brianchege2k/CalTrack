@@ -191,13 +191,7 @@ padding-bottom:30px;
   transform: scale3d(1, 1, 1);
 }
 
-th{
-background: #1e3c72;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to right, #2a5298, #1e3c72);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to right, #2a5298, #1e3c72); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
-
-}
 
 .card{
 font-family: 'Open Sans', sans-serif;
@@ -293,16 +287,6 @@ color:  linear-gradient(to right, #6dd5ed, #2193b0); /* W3C, IE 10+/ Edge, Firef
 
 }
 
-.table {
-    background-color: white;
-    color: #18AD7C;
-}
-table.table-bordered > thead > tr > th {
-  border:1px solid #1e3c72;
-}
-table.table-bordered > tbody > tr > td {
-  border:1px solid #1e3c72;
-}
 
 .profile-submit {
 background: #457fca;  /* fallback for old browsers */
@@ -312,15 +296,10 @@ background: linear-gradient(to bottom, #5691c8, #457fca); /* W3C, IE 10+/ Edge, 
 
 .form-labels {
   font-family: 'Titillium Web', sans-serif;
-  color:#457fca;
+  color:#000000;
 
 }
-
-
-
-          
-    
-
+         
 .card {
   position: relative;
   overflow: hidden;
